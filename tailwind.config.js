@@ -12,6 +12,12 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      borderImage: {
+        "gradient-gold": "linear-gradient(to right, #ffd700, #ffb700)",
+      },
+      fontFamily: {
+        amiri: ["Amiri", "serif"],
+      },
     },
   },
   plugins: [],
