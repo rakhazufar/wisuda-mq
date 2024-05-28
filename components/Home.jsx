@@ -10,6 +10,7 @@ import Reveal from "@/components/Reveal";
 import Topi from "@/public/topi.png";
 import Pin from "@/public/pin.png";
 import Buku from "@/public/buku.png";
+import Countdown from "@/components/Countdown";
 
 function Section1({ scrollYProgress }) {
   const variantsline = {
@@ -98,15 +99,20 @@ function Section1({ scrollYProgress }) {
               alt="logo mq"
             />
           </Reveal>
-          <Reveal className="relative overflow-hidden flex gap-2 items-center font-amiri border-2 py-2 px-4 rounded-lg bg-transparent	mt-2 border border-amber-400">
-            <p className="text-base md:text-lg">Juni</p> <p>|</p>{" "}
-            <p className="text-3xl md:text-5xl">01</p>
-            <p>|</p>
-            <p className="text-base md:text-lg">2024</p>
+          <Reveal className="relative overflow-hidden flex column font-amiri border-2 py-2 px-4 rounded-lg bg-transparent	mt-2 border border-amber-400">
+            <Countdown />
           </Reveal>
 
-          <Reveal className="relative overflow-hidden font-amiri text-center md:mt-4 mt-2 w-[]">
-            <p className="text-base md:text-xl">08.00 – Selesai</p>
+          <Reveal className="relative overflow-hidden font-amiri text-center flex flex-col items-center md:mt-4 mt-2">
+            <div className="flex gap-2 items-center">
+              <p className="text-base md:text-lg">Juni</p> <p>–</p>{" "}
+              <p className="text-base md:text-lg">01</p>
+              <p>–</p>
+              <p className="text-base md:text-lg">2024</p>
+              <p>|</p>
+              <p className="text-base md:text-xl">08.00 – Selesai</p>
+            </div>
+
             <p className="text-base md:text-xl">
               Gelanggang Olahraga Masyarakat (GOM) Jonggol.
             </p>
