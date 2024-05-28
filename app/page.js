@@ -3,49 +3,57 @@
 import Container from "@/components/Container";
 import Section1 from "@/components/Home";
 import Section2 from "@/components/Alamat";
+import Section3 from "@/components/Alur";
+import Section4 from "@/components/Keterangan";
+import Section5 from "@/components/Pemberitahuan";
+import Scroll from "@/components/scroll";
 import { useScroll } from "framer-motion";
-import { useRef } from "react";
-import Confetti from "react-confetti";
-import useWindowSize from "@/hooks/useWindowSize";
+import { useAnimation } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { useInView } from "react-intersection-observer";
+import Opener from "@/components/Opener";
 
 export default function Home() {
-  const container = useRef();
-  const { width, height } = useWindowSize();
+  const containerRef = useRef(null);
+  const controls = useAnimation();
+  const { ref: ref5, inView: inView5 } = useInView();
+  const [isInView, setIsInView] = useState(false);
+  const [showOpener, setShowOpener] = useState(true);
+
   const { scrollYProgress } = useScroll({
-    target: container,
+    target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  const drawShape = (ctx) => {
-    ctx.beginPath();
-    const scale = 0.5; // Tambahkan faktor skala untuk memperkecil bentuk
-    for (let i = 0; i < 22; i++) {
-      const angle = 0.35 * i;
-      const x = (0.2 + 1.5 * angle) * Math.cos(angle) * scale;
-      const y = (0.2 + 1.5 * angle) * Math.sin(angle) * scale;
-      ctx.lineTo(x, y);
+  useEffect(() => {
+    if (inView5) {
+      controls.start({ opacity: 0, y: -20, transition: { duration: 0.5 } });
+      setIsInView(true);
+    } else {
+      controls.start({ opacity: 1, y: 0, transition: { duration: 0.5 } });
+      setIsInView(false);
     }
-    ctx.stroke();
-    ctx.closePath();
-  };
+  }, [inView5, controls]);
 
   return (
     <main
-      ref={container}
-      className="flex h-[200vh] flex-col items-center justify-between"
+      ref={containerRef}
+      className={`flex ${
+        showOpener ? "h-[100vh]" : "h-[500vh]"
+      } relative flex-col items-center justify-between`}
     >
+      {showOpener || (!isInView && <Scroll />)}
       <Container>
-        <Section1 scrollYProgress={scrollYProgress} />
-        <Section2 scrollYProgress={scrollYProgress} />
-        {/* <Confetti
-          width={width}
-          height={height}
-          numberOfPieces={50}
-          colors={["#ffd700"]}
-          opacity={0.7}
-          drawShape={drawShape}
-          gravity={0.04}
-        /> */}
+        {showOpener && <Opener setShowOpener={setShowOpener} />}
+        {!showOpener && (
+          <>
+            <Section1 scrollYProgress={scrollYProgress} />
+            <Section2 scrollYProgress={scrollYProgress} />
+            <Section3 scrollYProgress={scrollYProgress} />
+            <Section4 scrollYProgress={scrollYProgress} />
+            <Section5 ref={ref5} scrollYProgress={scrollYProgress} />
+          </>
+        )}
       </Container>
     </main>
   );

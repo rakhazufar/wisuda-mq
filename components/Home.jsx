@@ -10,10 +10,8 @@ import Reveal from "@/components/Reveal";
 import Topi from "@/public/topi.png";
 import Pin from "@/public/pin.png";
 import Buku from "@/public/buku.png";
-function Section1({ scrollYProgress }) {
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
 
+function Section1({ scrollYProgress }) {
   const variantsline = {
     hidden: { opacity: 0 },
     visible: {
@@ -25,11 +23,8 @@ function Section1({ scrollYProgress }) {
   };
 
   return (
-    <motion.div
-      style={{ scale, rotate }}
-      className="w-full sticky top-0 relative h-screen bg-gradient-radial from-[#1d1d1d] via-[#0d0d0d] to-[#000000] flex justify-center items-center"
-    >
-      <div className="md:w-[80%] w-[95%] md:h-[90%] relative h-[75%] bg-gradient-radial from-[#1d1d1d] via-[#0d0d0d] to-[#000000] flex justify-center items-center z-10">
+    <motion.div className="w-full sticky top-0 relative h-screen bg-gradient-radial from-[#1d1d1d] via-[#0d0d0d] to-[#000000] flex justify-center items-center">
+      <div className="md:w-[80%] w-[90%] md:h-[90%] relative h-[80%] bg-gradient-radial from-[#1d1d1d] via-[#0d0d0d] to-[#000000] flex justify-center items-center z-10">
         <motion.div
           animate={{ y: [0, -10, 0], x: [0, -10, 0] }}
           transition={{
@@ -77,7 +72,7 @@ function Section1({ scrollYProgress }) {
           }}
         >
           <Reveal className="relative overflow-hidden">
-            <Image src={Logo} width={60} alt="logo mq" />
+            <Image src={Logo} width={50} alt="logo mq" />
           </Reveal>
           <Reveal className="relative overflow-hidden">
             <h3 className="font-amiri text-base md:text-xl font-normal">

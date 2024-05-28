@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.translate-center {
+  @apply transform translate-x-[-50%] translate-y-[-50%];
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
