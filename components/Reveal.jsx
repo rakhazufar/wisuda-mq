@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function Reveal({ children, className }) {
-  console.log(className);
   const variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -23,7 +22,7 @@ function Reveal({ children, className }) {
     >
       {children}
       <motion.div
-        className="absolute w-full h-full bg-amber-400 top-0 left-0"
+        className="absolute bg-amber-400 top-0 left-0"
         variants={{
           hidden: { left: 0 },
           visible: {

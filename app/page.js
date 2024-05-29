@@ -12,6 +12,7 @@ import { useAnimation } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import Opener from "@/components/Opener";
+import AudioPlayer from "@/components/Audio";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -19,6 +20,7 @@ export default function Home() {
   const { ref: ref5, inView: inView5 } = useInView();
   const [isInView, setIsInView] = useState(false);
   const [showOpener, setShowOpener] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -35,6 +37,12 @@ export default function Home() {
     }
   }, [inView5, controls]);
 
+  useEffect(() => {
+    if (showOpener == false) {
+      setIsMuted(false);
+    }
+  }, [showOpener]);
+
   return (
     <main
       ref={containerRef}
@@ -47,6 +55,7 @@ export default function Home() {
         {showOpener && <Opener setShowOpener={setShowOpener} />}
         {!showOpener && (
           <>
+            <AudioPlayer Audio={{ isMuted, setIsMuted }} />
             <Section1 scrollYProgress={scrollYProgress} />
             <Section2 scrollYProgress={scrollYProgress} />
             <Section3 scrollYProgress={scrollYProgress} />

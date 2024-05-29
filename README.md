@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wisuda Invitation Website
+
+A simple graduation invitation website built with Next.js, Framer Motion, and Tailwind CSS.
+
+## Features
+
+- Responsive design using Tailwind CSS
+- Smooth animations with Framer Motion
+- Countdown timer to the graduation day
 
 ## Getting Started
 
-First, run the development server:
+These instructions will help you set up and run the project on your local machine.
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- Node.js (version 12 or later)
+- npm (version 6 or later) or yarn (version 1.22 or later)
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/wisuda-invitation.git
+cd wisuda-invitation
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### Running the Development Server
+
+To start the development server, run:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To create an optimized production build, run:
 
-## Learn More
+```bash
+npm run build
+# or
+yarn build
+```
 
-To learn more about Next.js, take a look at the following resources:
+This will create a `build` folder with the production build of your application. You can then serve it with any static site hosting service or use the built-in Next.js server.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can deploy this application using various hosting providers that support Next.js, such as Vercel, Netlify, or any other provider that supports static site hosting.
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Countdown Timer
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The countdown timer component shows the remaining time until the graduation day.
+
+### Animations
+
+Framer Motion is used to create smooth animations for various elements on the page, enhancing the user experience.
+
+## Built With
+
+- [Next.js](https://nextjs.org/) - The React framework
+- [Framer Motion](https://www.framer.com/motion/) - A library for animations
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+
+## Contributing
+
+Feel free to submit issues and pull requests. Any contributions are welcome!
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Thanks to the creators of Next.js, Framer Motion, and Tailwind CSS for their amazing tools.
+- Special thanks to all contributors and users who have provided feedback and suggestions.

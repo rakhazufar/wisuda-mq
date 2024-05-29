@@ -57,7 +57,7 @@ function Opener({ setShowOpener }) {
             animate="visible"
             className="relative overflow-hidden"
           >
-            <h1 className="font-amiri text-5xl md:text-4xl font-bold">
+            <h1 className="font-amiri text-white text-5xl md:text-4xl font-bold">
               WISUDA
             </h1>
           </motion.div>
@@ -67,7 +67,7 @@ function Opener({ setShowOpener }) {
             animate="visible"
             className="relative overflow-hidden"
           >
-            <h2 className="font-amiri text-base md:text-xl font-medium">
+            <h2 className="font-amiri text-white text-base md:text-xl font-medium">
               Pondok Pesantren Madinatul Quran Bogor
             </h2>
           </motion.div>

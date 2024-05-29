@@ -33,7 +33,7 @@ function Section1({ scrollYProgress }) {
             ease: "easeInOut",
             repeat: Infinity,
           }}
-          className="w-full h-full absolute left-3 top-3 z-20 mt-[-0.7rem]"
+          className="absolute left-3 top-3 z-20 mt-[-0.7rem]"
         >
           <Image src={Topi} alt="topi" width={120} />
         </motion.div>
@@ -76,17 +76,17 @@ function Section1({ scrollYProgress }) {
             <Image src={Logo} width={50} alt="logo mq" />
           </Reveal>
           <Reveal className="relative overflow-hidden">
-            <h3 className="font-amiri text-base md:text-xl font-normal">
-              Anda diundang untuk hadir di Acara
+            <h3 className="font-amiri text-base text-white md:text-xl font-normal">
+              Undangan untuk hadir di Acara
             </h3>
           </Reveal>
           <Reveal className="relative overflow-hidden">
-            <h1 className="font-amiri text-3xl md:text-4xl font-bold">
-              WISUDA
+            <h1 className="font-amiri text-3xl  text-white md:text-4xl font-bold">
+              WISUDA AKBAR
             </h1>
           </Reveal>
           <Reveal className="relative overflow-hidden">
-            <h2 className="font-amiri text-base md:text-xl font-medium">
+            <h2 className="font-amiri text-base md:text-xl  text-white font-medium">
               Pondok Pesantren Madinatul Quran Bogor
             </h2>
           </Reveal>
@@ -103,22 +103,29 @@ function Section1({ scrollYProgress }) {
             <Countdown />
           </Reveal>
 
-          <Reveal className="relative overflow-hidden font-amiri text-center flex flex-col items-center md:mt-4 mt-2">
+          <Reveal className="relative overflow-hidden font-amiri text-center flex flex-col items-center md:mt-4 mt-2 z-100">
             <div className="flex gap-2 items-center">
-              <p className="text-base md:text-lg">Juni</p> <p>–</p>{" "}
-              <p className="text-base md:text-lg">01</p>
-              <p>–</p>
-              <p className="text-base md:text-lg">2024</p>
-              <p>|</p>
-              <p className="text-base md:text-xl">08.00 – Selesai</p>
+              <p className="text-base md:text-lg  text-white">Juni</p>{" "}
+              <p className="text-white">–</p>{" "}
+              <p className="text-base text-white md:text-lg" text-white>
+                01
+              </p>
+              <p className="text-white">–</p>
+              <p className="text-base text-white md:text-lg">2024</p>
+              <p className="text-white">|</p>
+              <p className="text-base text-white md:text-xl">08.00 – Selesai</p>
             </div>
-
-            <p className="text-base md:text-xl">
-              Gelanggang Olahraga Masyarakat (GOM) Jonggol.
-            </p>
-            <p className="text-base md:text-xl">
-              Jonggol, Kabupaten Bogor, Jawa Barat
-            </p>
+            <a
+              href="https://goo.gl/maps/hJzwmnU4MBpRWm1b6?coh=178571&entry=tt"
+              className="text-white"
+            >
+              <p className="text-base text-white md:text-xl underline">
+                Gelanggang Olahraga Masyarakat (GOM) Jonggol.
+              </p>
+              <p className="text-base text-white md:text-xl underline">
+                Jonggol, Kabupaten Bogor, Jawa Barat
+              </p>
+            </a>
           </Reveal>
         </motion.div>
       </div>

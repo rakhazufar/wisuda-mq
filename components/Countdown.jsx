@@ -1,19 +1,4 @@
-"use client";
-
-import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { styled } from "@mui/material/styles";
-
-const Timer = styled(Typography)(() => ({
-  fontSize: "33px",
-  fontWeight: "bold",
-}));
-
-const Colon = styled(Typography)(() => ({
-  fontSize: "20px",
-  fontWeight: "bold",
-  color: "#E07575",
-}));
 
 export default function Countdown() {
   const [days, setDays] = useState(0);
@@ -39,32 +24,25 @@ export default function Countdown() {
   }, []);
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        pb: 0,
-      }}
-    >
-      <Typography>Menuju Wisuda:</Typography>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-        <Box>
-          <Timer>{days < 10 ? "0" + days : days}</Timer>
-        </Box>
-        <Colon>:</Colon>
-        <Box>
-          <Timer>{hours < 10 ? "0" + hours : hours}</Timer>
-        </Box>
-        <Colon>:</Colon>
-        <Box>
-          <Timer>{minutes < 10 ? "0" + minutes : minutes}</Timer>
-        </Box>
-        <Colon>:</Colon>
-        <Box>
-          <Timer>{seconds < 10 ? "0" + seconds : seconds}</Timer>
-        </Box>
-      </Box>
-    </Box>
+    <div className="text-center pb-0">
+      <div className="text-white">Menuju Wisuda:</div>
+      <div className="flex items-center gap-1 justify-center">
+        <div className="text-3xl font-bold text-white">
+          {days < 10 ? "0" + days : days}
+        </div>
+        <div className="text-xl font-bold text-red-500">:</div>
+        <div className="text-3xl font-bold text-white">
+          {hours < 10 ? "0" + hours : hours}
+        </div>
+        <div className="text-xl font-bold text-red-500">:</div>
+        <div className="text-3xl font-bold text-white">
+          {minutes < 10 ? "0" + minutes : minutes}
+        </div>
+        <div className="text-xl font-bold text-red-500">:</div>
+        <div className="text-3xl font-bold text-white">
+          {seconds < 10 ? "0" + seconds : seconds}
+        </div>
+      </div>
+    </div>
   );
 }
