@@ -24,7 +24,7 @@ function Section3({ scrollYProgress }) {
         >
           <div className="bg-amber-400 p-1 w-11/12 rounded-lg">
             <h2 className=" text-base md:text-lg font-semibold text-black leading-6">
-              Denah Lokasi Gelanggang Olahraga Masyarakat (GOM) Jonggol
+              Alur Prosesi Penyematan dan Poto Booth Wisudawan/Wisudawati
             </h2>
           </div>
 

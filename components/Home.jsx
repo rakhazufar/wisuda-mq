@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Pattern from "@/public/pattern/pattern-background.png";
-import { useTransform, motion, delay } from "framer-motion";
+import { motion } from "framer-motion";
 import Logo from "@/public/logo-mq.png";
 import ArabWisuda from "@/public/arabic-wisuda.png";
 import Reveal from "@/components/Reveal";
@@ -11,6 +11,7 @@ import Topi from "@/public/topi.png";
 import Pin from "@/public/pin.png";
 import Buku from "@/public/buku.png";
 import Countdown from "@/components/Countdown";
+import ArrowRightTop from "@/public/arrow-upper-right.png";
 
 function Section1({ scrollYProgress }) {
   const variantsline = {
@@ -115,17 +116,18 @@ function Section1({ scrollYProgress }) {
               <p className="text-white">|</p>
               <p className="text-base text-white md:text-xl">08.00 – Selesai</p>
             </div>
-            <a
-              href="https://goo.gl/maps/hJzwmnU4MBpRWm1b6?coh=178571&entry=tt"
-              className="text-white"
-            >
-              <p className="text-base text-white md:text-xl underline">
-                Gelanggang Olahraga Masyarakat (GOM) Jonggol.
-              </p>
-              <p className="text-base text-white md:text-xl underline">
-                Jonggol, Kabupaten Bogor, Jawa Barat
-              </p>
-            </a>
+
+            <div className="text-base text-white md:text-xl">
+              <p>Gelanggang Olahraga Masyarakat (GOM) Jonggol.</p>
+              <div className="flex gap-2 items-center justify-center">
+                <p>Jonggol, Kabupaten Bogor, Jawa Barat</p>
+                <div className="p-2 bg-amber-500 rounded text-black hover:text-white font-amiri font-semibold cursor-pointer hover:bg-amber-600 transation-all duration-1000">
+                  <a href="https://goo.gl/maps/hJzwmnU4MBpRWm1b6?coh=178571&entry=tt">
+                    <Image src={ArrowRightTop} alt="arrow" width={10} />
+                  </a>
+                </div>
+              </div>
+            </div>
           </Reveal>
         </motion.div>
       </div>
